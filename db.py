@@ -74,7 +74,7 @@ class Database(object):
             and influxDB database "historical". Requests user login info.
         '''
         cls.HOST            = "localhost"
-        cls.MYSQL_USR       = "gabriel" #input("User: ")
+        cls.MYSQL_USR       = input("User: ")
         cls.MYSQL_DATABASE  = "exchanges"
         cls.INFLUX_USR      = "root"
         cls.INFLUX_PASSWD   = "root"
@@ -87,7 +87,7 @@ class Database(object):
         try:
             cls.mysql_client = mysql.connector.connect(host     = cls.HOST,
                                                        user     = str(cls.MYSQL_USR),
-                                                       passwd   = "Sugnudnum13#", #str(getpass("Password: ")),
+                                                       passwd   = str(getpass("Password: ")),
                                                        database = cls.MYSQL_DATABASE)
             
         except:
